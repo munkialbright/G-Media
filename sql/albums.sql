@@ -1,23 +1,25 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
--- http://www.phpmyadmin.net
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 09, 2012 at 08:35 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Apr 05, 2020 at 10:10 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `socialnetwork`
+-- Database: `glom`
 --
 
 -- --------------------------------------------------------
@@ -26,22 +28,37 @@ SET time_zone = "+00:00";
 -- Table structure for table `albums`
 --
 
-CREATE TABLE IF NOT EXISTS `albums` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `albums` (
+  `id` int(11) NOT NULL,
   `album_title` varchar(32) NOT NULL,
   `album_description` text NOT NULL,
   `created_by` varchar(32) NOT NULL,
-  `date_created` timestamp NOT NULL,
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `uid` varchar(32) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `default_image` text NOT NULL,
+  `removed` varchar(3) NOT NULL DEFAULT 'no'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `albums`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `albums` (`id`, `album_title`, `album_description`, `created_by`, `date_created`, `uid`) VALUES
-(1, 'This is a test album', 'This is the description of my test album.', 'munkialbright', '2020-03-14 01:17:01', 'test');
+--
+-- Indexes for table `albums`
+--
+ALTER TABLE `albums`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `albums`
+--
+ALTER TABLE `albums`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,23 +1,25 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
--- http://www.phpmyadmin.net
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 12, 2012 at 08:45 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Apr 05, 2020 at 10:21 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `socialnetwork`
+-- Database: `glom`
 --
 
 -- --------------------------------------------------------
@@ -26,22 +28,36 @@ SET time_zone = "+00:00";
 -- Table structure for table `photos`
 --
 
-CREATE TABLE IF NOT EXISTS `photos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `photos` (
+  `id` int(11) NOT NULL,
   `pid` varchar(32) NOT NULL,
   `username` varchar(32) NOT NULL,
-  `date_posted` timestamp NOT NULL,
+  `date_posted` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `album_title` varchar(32) NOT NULL,
   `image_url` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `removed` varchar(3) NOT NULL DEFAULT 'no'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `photos`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `photos` (`id`, `uid`, `username`, `date_posted`, `description`, `image_url`) VALUES
-(1, 'test', 'munkialbright', '2020-03-14 01:17:01', 'This is a test', 'http://localhost/Social%20Media%20Website/Social%20Media/img/default_pic.jpg');
+--
+-- Indexes for table `photos`
+--
+ALTER TABLE `photos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `photos`
+--
+ALTER TABLE `photos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

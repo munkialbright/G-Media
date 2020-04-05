@@ -1,23 +1,25 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
--- http://www.phpmyadmin.net
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 07, 2012 at 06:41 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Apr 05, 2020 at 10:20 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `socialnetwork`
+-- Database: `glom`
 --
 
 -- --------------------------------------------------------
@@ -26,20 +28,33 @@ SET time_zone = "+00:00";
 -- Table structure for table `likes`
 --
 
-CREATE TABLE IF NOT EXISTS `likes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_liked` varchar(50) NOT NULL,
+CREATE TABLE `likes` (
+  `id` int(11) NOT NULL,
+  `user_liked` varchar(255) NOT NULL,
   `post_id` int(11) NOT NULL,
-  `unlike` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `unlike` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `likes`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `likes` (`id`, `user_liked`, `total_likes`, `uid`) VALUES
-(1, 'creativecode', 38, 'abc12345678jshjdhjhfd');
+--
+-- Indexes for table `likes`
+--
+ALTER TABLE `likes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `likes`
+--
+ALTER TABLE `likes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
