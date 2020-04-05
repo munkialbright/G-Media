@@ -1,0 +1,21 @@
+.newsFeed h2 {
+    background-color: rgb(228, 236, 245);
+    border: 1px solid #DCE5EE;
+    margin: 10px;
+}
+
+.newsFeed a {
+    color: #0084c6;
+    text-decoration: none;
+}
+
+.newsFeed a:hover {
+    color: #0084c685;
+    text-decoration: none;
+}
+
+.newsfeedPosts {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}

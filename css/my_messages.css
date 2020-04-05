@@ -1,0 +1,50 @@
+.form_reply {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+    bottom: 20px;
+}
+
+.me_msg {
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    background-color: #ddd;
+    float: right;
+    width: 60%;
+    text-align: justify;
+}
+
+.you_msg {
+    border-radius: 5px;
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    float: left;
+    width: 60%;
+    text-align: justify;
+}
+
+.msg_btn {
+    background-color: rgb(179, 196, 209);
+    border: 1px solid rgb(179, 196, 209);
+    font-size: 15px;
+    color: #FFF;
+    padding: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    border-radius: 7px;
+}
+
+@media screen and (max-width: 600px) {
+    .me_msg {
+        width: 75%;
+    }
+    .you_msg {
+        width: 75%;
+    }
+
+}
