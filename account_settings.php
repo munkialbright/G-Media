@@ -146,9 +146,9 @@
 
 					$date = date("Y-m-d H:i:s");
 
-					$profile_photo = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$user','$user','$date','$user','http://localhost/Social%20Media%20Website/Social%20Media/userdata/profile_pics/$rand_dir_name/$profilepic_name','no')");
+					$profile_photo = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$user','$user','$date','$user','http://localhost/G-Media/userdata/profile_pics/$rand_dir_name/$profilepic_name','no')");
 
-					$post_query = mysqli_query($conn, "INSERT INTO posts (`id`, `body`, `image`, `date_added`, `added_by`, `user_posted_to`, `deleted`) VALUES ('', 'Profile picture has been updated.', 'http://localhost/Social%20Media%20Website/Social%20Media/userdata/profile_pics/$rand_dir_name/$profilepic_name', '$date', '$user', 'Friends', 'no')");
+					$post_query = mysqli_query($conn, "INSERT INTO posts (`id`, `body`, `image`, `date_added`, `added_by`, `user_posted_to`, `deleted`) VALUES ('', 'Profile picture has been updated.', 'http://localhost/G-Media/userdata/profile_pics/$rand_dir_name/$profilepic_name', '$date', '$user', 'Friends', 'no')");
 				}
 			}
 			else
@@ -187,9 +187,9 @@
 		<input type="password" name="newpassword2" placeholder="Repeat Password" class="my_subform" id="myInput5" required><br>
 		<input type="checkbox" onclick="myFunction(myInput5)">Show Password<br><br>
 		<input type="submit" name="update_p" value="Update">
-	
+	</form>
 
-		<hr>
+	<hr>
 	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 		
 		<p>UPDATE YOUR PROFILE INFORMATION</p><br>

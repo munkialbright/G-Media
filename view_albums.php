@@ -20,9 +20,9 @@
                     $ProfilePic = $getProfileRow['profile_pic'];
                     $date = $getProfileRow['sign_up_date'];
                     
-                    $profile_album = mysqli_query($conn, "INSERT INTO albums (`id`, `album_title`, `album_description`, `created_by`, `date_created`, `uid`, `default_image`, `removed`) VALUES ('','$username','Profile Post','$username','$date','$username','http://localhost/Social%20Media%20Website/Social%20Media/userdata/profile_pics/$ProfilePic','no')");
+                    $profile_album = mysqli_query($conn, "INSERT INTO albums (`id`, `album_title`, `album_description`, `created_by`, `date_created`, `uid`, `default_image`, `removed`) VALUES ('','$username','Profile Post','$username','$date','$username','http://localhost/G-Media/userdata/profile_pics/$ProfilePic','no')");
 
-                    $profile_photo = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$username','$username','$date','$username','http://localhost/Social%20Media%20Website/Social%20Media/userdata/profile_pics/$ProfilePic','no')");
+                    $profile_photo = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$username','$username','$date','$username','http://localhost/G-Media/userdata/profile_pics/$ProfilePic','no')");
                 }
                 
                 if (isset($_POST['uploadpic'])) {
@@ -49,9 +49,9 @@
                                 $description = @$_POST['description'];
                                 $date_created = date("Y-m-d H:i:s");
 
-                                $album_query = mysqli_query($conn, "INSERT INTO albums (`id`, `album_title`, `album_description`, `created_by`, `date_created`, `uid`, `default_image`, `removed`) VALUES ('','$title','$description','$user','$date_created','$rand_uid_name','http://localhost/Social%20Media%20Website/Social%20Media/userdata/user_photos/$rand_dir_name/$profilepic_name','no')");
+                                $album_query = mysqli_query($conn, "INSERT INTO albums (`id`, `album_title`, `album_description`, `created_by`, `date_created`, `uid`, `default_image`, `removed`) VALUES ('','$title','$description','$user','$date_created','$rand_uid_name','http://localhost/G-Media/userdata/user_photos/$rand_dir_name/$profilepic_name','no')");
 
-                                $photo_query = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$rand_uid_name','$user','$date_created','$title','http://localhost/Social%20Media%20Website/Social%20Media/userdata/user_photos/$rand_dir_name/$profilepic_name','no')");
+                                $photo_query = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$rand_uid_name','$user','$date_created','$title','http://localhost/G-Media/userdata/user_photos/$rand_dir_name/$profilepic_name','no')");
 
                                 header("location: view_photo.php?uid=$rand_uid_name");
                             }
@@ -64,7 +64,7 @@
             }
             else
             {
-            echo "<meta http-equiv=\"refresh\" content=\"0; url=http://localhost/Social%20Media%20Website/Social%20Media/index.php\">";	
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=http://localhost/G-Media/index.php\">";	
             exit();
             }
         }

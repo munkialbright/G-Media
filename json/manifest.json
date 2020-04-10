@@ -4,7 +4,7 @@
   "theme_color": "#eff5f9",
   "background_color": "#eff5f9",
   "display": "standalone",
-  "start_url": "http://localhost/Social%20Media%20Website/Social%20Media/home.php",
+  "start_url": "http://localhost/G-Media/home.php",
   "icons": [
     {
       "src": "../img/icons/G-Media_72x72.png",

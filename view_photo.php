@@ -27,7 +27,7 @@
                                 //echo "Uploaded and stored in: ".@$_FILES["profilepic"]["name"];
                                 $profilepic_name = @$_FILES["profilepic"]["name"];
                                 $date_posted = date("Y-m-d H:i:s");
-                                $profilepic_query = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$picture','$user','$date_posted','$title','http://localhost/Social%20Media%20Website/Social%20Media/userdata/user_photos/$rand_dir_name/$profilepic_name','no')");
+                                $profilepic_query = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$picture','$user','$date_posted','$title','http://localhost/G-Media/userdata/user_photos/$rand_dir_name/$profilepic_name','no')");
                                 header("location: view_photo.php?uid=$picture");
                             }
                         }

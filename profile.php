@@ -41,7 +41,7 @@
 					//echo "Uploaded and stored in: ".@$_FILES["photo"]["name"];
 					$photo_name = @$_FILES["photo"]["name"];
 
-					$image = 'http://localhost/Social%20Media%20Website/Social%20Media/userdata/user_photos/'.$rand_dir_name.'/'.$photo_name;
+					$image = 'http://localhost/G-Media/userdata/user_photos/'.$rand_dir_name.'/'.$photo_name;
 
 					$photo_query = mysqli_query($conn, "INSERT INTO photos (`id`, `pid`, `username`, `date_posted`, `album_title`, `image_url`, `removed`) VALUES ('','$user','$user','$date_added','$username','$image','no')");
 				}
